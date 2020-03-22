@@ -20,15 +20,19 @@ func binarySearch(haystack []int, needle int) int {
 	lo := 0
 	hi := len(haystack) - 1
 
-	midIndex := lo + (hi-lo)/2
-	midValue := haystack[midIndex]
+	for lo <= hi {
+		midIndex := lo + (hi-lo)/2
+		midValue := haystack[midIndex]
 
-	if midValue == needle {
-		return midIndex
-	} else if midValue > needle {
-
-	} else {
-
+		if midValue == needle {
+			return midIndex
+		} else if midValue > needle {
+			// this means use the smaller half of the slice
+			hi = midIndex - 1
+		} else {
+			// this means use the larger half of the slice
+			lo = midIndex + 1
+		}
 	}
 
 	return -1
