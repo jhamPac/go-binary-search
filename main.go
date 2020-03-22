@@ -17,5 +17,19 @@ func main() {
 }
 
 func binarySearch(haystack []int, needle int) int {
+	lo := 0
+	hi := len(haystack) - 1
+
+	midIndex := lo + (hi-lo)/2
+	midValue := haystack[midIndex]
+
+	if midValue == needle {
+		return midIndex
+	} else if midValue > needle {
+
+	} else {
+
+	}
+
 	return -1
 }
